@@ -42,6 +42,10 @@ There are two commands, that are missing from the commonly distributed v1.1 data
 
  - [SSD1306 tricks](https://gr33nonline.wordpress.com/2025/07/22/ssd1306-tricks/)
 
+### Github issues
+
+ - [Add one pixel horizontal scroll commands for 0x2C and 0x2D #293](https://github.com/adafruit/Adafruit_SSD1306/issues/293)
+
 ## Known Issues
 
  - Can not turn off Zoom, immediately after turning it on - weird bug, under investigation.
