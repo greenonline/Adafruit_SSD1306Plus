@@ -25,6 +25,10 @@ There are two commands, that are missing from the commonly distributed v1.1 data
  - Fade/Blink (`23h`)
  - Zoom (`D6h`).
 
+## See also
+
+A similarly derived library for the `SSD1306_I2C` Arduino library, [`SSD1306_I2CPlus`](https://github.com/greenonline/SSD1306_I2CPlus), that offers the same extended functionality.
+
 ## Links
 
 ### Datasheets
