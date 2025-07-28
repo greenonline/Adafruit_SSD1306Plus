@@ -273,13 +273,6 @@
 #define SSD1306_UNKNOWN_0xFF                 0xFF
 
 
-
-//#define SSD1306_VERTICAL_AND_RIGHT_HORIZONTAL_SCROLL_ONE 0x29 ///< Init diag scroll one pixel
-//#define SSD1306_VERTICAL_AND_LEFT_HORIZONTAL_SCROLL_ONE 0x2A  ///< Init diag scroll one pixel
-//#define SSD1306_RIGHT_HORIZONTAL_SCROLL_ONE 0x2C          ///< Init right scroll one pixel
-//#define SSD1306_LEFT_HORIZONTAL_SCROLL_ONE 0x2D           ///< Init left scroll one pixel
-
-
 class Adafruit_SSD1306Plus:public Adafruit_SSD1306 {    //Adafruit_SSD1306Plus class inherits base class Adafruit_SSD1306
 public:
   // NEW CONSTRUCTORS -- recommended for new projects
