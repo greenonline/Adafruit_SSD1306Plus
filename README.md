@@ -77,4 +77,4 @@ A similarly derived library for the `SSD1306_I2C` Arduino library, [`SSD1306_I2C
   [5]: https://arduino.stackexchange.com/q/51420/6936
   [6]: https://electronics.stackexchange.com/q/485198/64015
   [7]: https://stackoverflow.com/q/40564050/4424636
-  [8]: https://gr33nonline3.wordpress.com/wp-content/uploads/2023/02/memento-ive-done-it.png
+  [8]: https://gr33nonline3.wordpress.com/wp-content/uploads/2023/02/memento-ive-done-it.png "I've done it"
