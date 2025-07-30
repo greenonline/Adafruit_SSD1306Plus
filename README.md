@@ -79,7 +79,7 @@ There are two commands, that are missing from the commonly distributed v1.1 data
  - Fade/Blink (`23h`)
  - Zoom (`D6h`).
 
-## Is there a 'hidden' single vertical/horizontal scroll?
+## Is there a 'hidden', or undocumented, single pixel vertical/horizontal scroll?
 
 Seeing as there are two undocumented *horizontal* scroll commands, so, likewise, it makes one wonder whether there are undocumented equivalents for the two *continual vertical/horizontal* (a.k.a. 'diagonal') scroll commands - that would offer *1-pixel* vertical/horizontal (a.k.a. 'diagonal') scroll functionality..?
 
