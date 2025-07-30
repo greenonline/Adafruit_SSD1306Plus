@@ -55,8 +55,8 @@
 #define SSD1306_UNKNOWN_0x28                 0x28
 #define SSD1306_VERTICAL_AND_RIGHT_HORIZONTAL_SCROLL      0x29 ///< Init diag scroll
 #define SSD1306_VERTICAL_AND_LEFT_HORIZONTAL_SCROLL       0x2A ///< Init diag scroll
-#define SSD1306_VERTICAL_AND_RIGHT_HORIZONTAL_SCROLL_ONE  0x29 ///< Init diag scroll
-#define SSD1306_VERTICAL_AND_LEFT_HORIZONTAL_SCROLL_ONE   0x2A ///< Init diag scroll
+#define SSD1306_VERTICAL_AND_RIGHT_HORIZONTAL_SCROLL_ONE  0x24 ///< Init diag scroll
+#define SSD1306_VERTICAL_AND_LEFT_HORIZONTAL_SCROLL_ONE   0x25 ///< Init diag scroll
 #define SSD1306_UNKNOWN_0x2B                 0x2B
 #define SSD1306_RIGHT_HORIZONTAL_SCROLL_ONE  0x2C ///< Init right scroll one pixel
 #define SSD1306_LEFT_HORIZONTAL_SCROLL_ONE   0x2D ///< Init left scroll one pixel
