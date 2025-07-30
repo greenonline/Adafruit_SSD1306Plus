@@ -20,7 +20,22 @@ The 1-pixel scroll commands (`2Ch` and `2Dh`) are not documented in either the [
 > 
 > Use the latter two.
 
-#### Example of 1-pixel scroll
+### Commands from v1.5 of the datasheet
+
+There are two commands, that are missing from the commonly distributed v1.1 data sheet, documented in v1.5 of the data sheet:
+
+ - Fade/Blink (`23h`)
+ - Zoom (`D6h`).
+
+## Is there a 'hidden', or undocumented, single pixel vertical/horizontal scroll?
+
+Seeing as there are two undocumented *horizontal* scroll commands, so, likewise, it makes one wonder whether there are undocumented equivalents for the two *continual vertical/horizontal* (a.k.a. 'diagonal') scroll commands - that would offer *1-pixel* vertical/horizontal (a.k.a. 'diagonal') scroll functionality..?
+
+See [Undocumented 1-pixel vertical scroll](xtras/OnePixelVertScroll.md) for more details.
+
+## Examples
+
+### Example of 1-pixel scroll
 
 This example illustrates a scrolling technique, that would be significantly more difficult to implement using continuous scrolling. It uses this 128x64 bitmap of a crudely drawn landscape:
 
@@ -38,9 +53,11 @@ Each of the three regions are scrolled at varying rates, with the mid-ground scr
 
 <sup>This is *actual* footage taken with an iPhone SE (1st gen), hence the poor quality and "rolling sync bars". The effect is much more fluid in real life.</sup>
 
-#### Important Notes
+## Important Notes
 
-##### Seeeduino Xiao
+### 1-pixel scroll
+
+#### Seeeduino Xiao
 
 I found, on the Seeeduino Xiao (SAMD21) at least, that a delay ***is*** required, *immediately* after issuing a 1-pixel scroll command, or when ***repeatedly*** issuing 1-pixel scroll commands. 
 
@@ -51,7 +68,7 @@ I found, on the Seeeduino Xiao (SAMD21) at least, that a delay ***is*** required
 
 Without any `delay(wait_time)` then no scrolling occurred at all. If `wait_time` is less than 12 ms delay, then that causes some of the scrolls to fail, and the full 50 pixels are *not* scrolled. The closer that the delay is to zero, the less distance, in pixels scrolled, the text/images actually move. The minimum length of the required delay probably depends upon the frequency of the µController, so you may need to experiment for your particular setup.
 
-##### Arduino Uno on Wokwi
+#### Arduino Uno on Wokwi
 
 For the landscape example, using an Arduino Uno on Wokwi, I found that only the top page, 0x00, i.e. the top third of the clouds, scrolled, and the remaining pages did not. So, even for one of the 1-pixel scroll commands,
 
@@ -71,19 +88,6 @@ I also found for the Arduino Uno simulation in Wokwi, that the `wait_time` had t
 |68 | jerky 4 pixel jumpy scroll |
 |63 | jerky 2 pixel jumpy scroll |
 |50 | no scrolling |
-
-### Commands from v1.5 of the datasheet
-
-There are two commands, that are missing from the commonly distributed v1.1 data sheet, documented in v1.5 of the data sheet:
-
- - Fade/Blink (`23h`)
- - Zoom (`D6h`).
-
-## Is there a 'hidden', or undocumented, single pixel vertical/horizontal scroll?
-
-Seeing as there are two undocumented *horizontal* scroll commands, so, likewise, it makes one wonder whether there are undocumented equivalents for the two *continual vertical/horizontal* (a.k.a. 'diagonal') scroll commands - that would offer *1-pixel* vertical/horizontal (a.k.a. 'diagonal') scroll functionality..?
-
-See [Undocumented 1-pixel vertical scroll](xtras/OnePixelVertScroll.md) for more details.
 
 ## See also
 
