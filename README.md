@@ -79,6 +79,12 @@ There are two commands, that are missing from the commonly distributed v1.1 data
  - Fade/Blink (`23h`)
  - Zoom (`D6h`).
 
+## Is there a 'hidden' single vertical/horizontal scroll?
+
+Seeing as there are two undocumented *horizontal* scroll commands, so, likewise, it makes one wonder whether there are undocumented equivalents for the two *continual vertical/horizontal* (a.k.a. 'diagonal') scroll commands - that would offer *1-pixel* vertical/horizontal (a.k.a. 'diagonal') scroll functionality..?
+
+See [Undocumented 1-pixel vertical scroll](xtras/OnePixelVertScroll.md) for more details.
+
 ## See also
 
 A similarly derived library for the `SSD1306_I2C` Arduino library, [`SSD1306_I2CPlus`](https://github.com/greenonline/SSD1306_I2CPlus), that offers the same extended functionality.
