@@ -16,9 +16,9 @@
 #include <util/delay.h>
 #endif
 
-#include "splash.h"
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306Plus.h>
+#include "splash.h"
 
 
 
