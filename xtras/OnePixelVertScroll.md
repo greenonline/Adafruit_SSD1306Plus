@@ -70,5 +70,14 @@ with the following `#define` lines:
 #define SSD1306_VERTICAL_AND_LEFT_HORIZONTAL_SCROLL_ONE   0x25
 ```
 
-Unfortunately, when tested, commands `0x24` and `0x25` did *not* scroll the display at all. Maybe some other currently unused bytes would work instead?  Further testing is ongoing.
+Unfortunately, when tested, commands `0x24` and `0x25` did *not* scroll the display at all. Maybe some other currently unused bytes would work instead? Or, maybe, some other prior, or additional, configuration is required, i.e. more command or data bytes are required - in order to get `0x24` and `0x25` (or whatever the corrent command byte values are) to scroll.  Further testing is ongoing.
+
+### Assumption
+
+The idea behind trying to second guess how bit manipulation affects the scrolling, is based upon the assumption that the driver IC used various bits to trigger certain functions - as is often the case in rudementary logic ICs. However, if the driver IC is using a variation of micro-code then all bets are off and the command byte values could just have been chosen at random - meaning that the individual bits themselves have no particular significance on affecting functionality changes.
+
+If it is is indeed the case, that micro-code is employed, then the 1-pixel vertical (diagonal) scroll functionality might not have even been implemented. Maybe the 1-pixel horizontal code functioning is just a lucky fluke.
+
+It *is* strange that the 1-pixel horizontal scroll is *consistantly* undocumented, from v1.1 to v1.5 of the data sheet. Was it done on purpose? If so, why? Is the implementation a bit flakey, and becaause of that it was quietly dropped?
+
 
