@@ -70,5 +70,5 @@ with the following `#define` lines:
 #define SSD1306_VERTICAL_AND_LEFT_HORIZONTAL_SCROLL_ONE   0x25
 ```
 
-Unfortunatelty, when tested, commands `0x24` and `0x25` did *not* scroll the display at all. Maybe some other currently unused bytes would work instead?  Further testing is ongoing.
+Unfortunately, when tested, commands `0x24` and `0x25` did *not* scroll the display at all. Maybe some other currently unused bytes would work instead?  Further testing is ongoing.
 
