@@ -68,7 +68,9 @@ There are multiple examples of how to use the new public methods, in the [`examp
 
 ### Example of 1-pixel scroll
 
-This example illustrates a scrolling technique, that would be significantly more difficult to implement using continuous scrolling. It uses this 128x64 bitmap of a crudely drawn landscape:
+The [LandscapeScroll](examples/LandscapeScroll/LandscapeScroll.ino) example illustrates a scrolling technique, that would be significantly more difficult to implement using continuous scrolling. No longer do you have to calculate the time that one pixel takes to be scrolled – when using continuous scroll – and then use that time for a timer based interrupt, in order to update the display.
+
+The sketch uses this 128x64 bitmap of a crudely drawn landscape:
 
 > [![128x64 Bitmap landscape][9]][9]
 
