@@ -376,7 +376,9 @@ void Adafruit_SSD1306Plus::startscrolldiagleftone(uint8_t start, uint8_t stop) {
 }
 
 void Adafruit_SSD1306Plus::ssd1306_sendCommandList(const uint8_t *c, uint8_t n) {
+  TRANSACTION_START
   ssd1306_commandList(c, n);
+  TRANSACTION_END
 }
 
 
