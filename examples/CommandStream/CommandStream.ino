@@ -120,19 +120,41 @@ void setup() {
 
   // Scroll horizontally continually
   static const uint8_t PROGMEM cmdlistHScroll[] = {
-      0x27,
-      0x00,
-      0x00,
-      0x00,
-      0x07,
-      0x00,
-      0xFF};
+      0x27,   // command - left continuous horizontal scroll
+      0x00,   // dummy 0x00
+      0x00,   // start
+      0x00,   // interval
+      0x07,   // end
+      0x00,   // dummy 0x00
+      0xFF};  // dummy 0xFF
   display.ssd1306_sendCommandList(cmdlistHScroll, sizeof(cmdlistHScroll));
 
   // Start scroll
   static const uint8_t PROGMEM cmdlistStartScroll[] = {
       0x2F};
   display.ssd1306_sendCommandList(cmdlistStartScroll, sizeof(cmdlistStartScroll));
+
+  pause(2000);
+
+  // Stop scroll and start right one pixel scroll, 21 times.
+  display.ssd1306_sendCommandList(cmdlistStopScroll, sizeof(cmdlistStopScroll));
+  static const uint8_t PROGMEM cmdlistHScrollOne[] = {
+      0x2C,   // command - right 1-pixel horizontal scroll
+      0x00,   // dummy 0x00
+      0x00,   // start
+      0x00,   // interval
+      0x07,   // end
+      0x00,   // dummy 0x00
+      0xFF};  // dummy 0xFF
+  display.ssd1306_sendCommandList(cmdlistHScrollOne, sizeof(cmdlistHScrollOne));
+
+  int wait_time = 12;
+  pause(wait_time);
+
+  for (int i=0; i<20; i++) {
+    display.ssd1306_sendCommandList(cmdlistHScrollOne, sizeof(cmdlistHScrollOne));
+    pause(wait_time);
+  }
 }
 
 void loop() {}
