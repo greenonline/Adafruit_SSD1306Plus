@@ -107,6 +107,9 @@ void setup() {
     // bitmap display
     display.drawBitmap(0, 0, epd_bitmap_StarWarsLandscape_WonB, 128, 64, 1);
     display.display();
+
+    //display.stopscroll();  // Not strictly needed as no scrolling occurring yet...
+                             // but good practice to call before new scroll commands
 }
 
 void loop() {
