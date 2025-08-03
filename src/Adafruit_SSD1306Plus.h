@@ -298,6 +298,11 @@ public:
   void startscrolldiagrightone(uint8_t start, uint8_t stop);
   void startscrolldiagleftone(uint8_t start, uint8_t stop);
 
+  void startscrollrightonewait(uint8_t start, uint8_t stop, int scrollWaitTime);
+  void startscrollleftonewait(uint8_t start, uint8_t stop, int scrollWaitTime);
+  void startscrolldiagrightonewait(uint8_t start, uint8_t stop, int scrollWaitTime);
+  void startscrolldiagleftonewait(uint8_t start, uint8_t stop, int scrollWaitTime);
+
   // Raw commands
   void ssd1306_sendCommandList(const uint8_t *c, uint8_t n);
 
