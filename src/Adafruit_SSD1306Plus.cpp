@@ -379,6 +379,26 @@ void Adafruit_SSD1306Plus::startscrolldiagleftone(uint8_t start, uint8_t stop) {
   TRANSACTION_END
 }
 
+void Adafruit_SSD1306Plus::startscrollrightonewait(uint8_t start, uint8_t stop, int scrollWaitTime) {
+  startscrollrightone(start, stop);
+  delay(scrollWaitTime);
+}
+
+void Adafruit_SSD1306Plus::startscrollleftonewait(uint8_t start, uint8_t stop, int scrollWaitTime) {
+  startscrollleftone(start, stop);
+  delay(scrollWaitTime);
+}
+
+void Adafruit_SSD1306Plus::startscrolldiagrightonewait(uint8_t start, uint8_t stop, int scrollWaitTime) {
+  startscrolldiagrightone(start, stop);
+  delay(scrollWaitTime);
+}
+
+void Adafruit_SSD1306Plus::startscrolldiagleftonewait(uint8_t start, uint8_t stop, int scrollWaitTime) {
+  startscrolldiagleftone(start, stop);
+  delay(scrollWaitTime);
+}
+
 void Adafruit_SSD1306Plus::ssd1306_sendCommandList(const uint8_t *c, uint8_t n) {
   TRANSACTION_START
   ssd1306_commandList(c, n);
