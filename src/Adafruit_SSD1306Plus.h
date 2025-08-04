@@ -272,6 +272,20 @@
 #define SSD1306_UNKNOWN_0xFE                 0xFE
 #define SSD1306_UNKNOWN_0xFF                 0xFF
 
+//
+// COM pin configuration - Sect. 4, Table 9-1 datasheet
+//
+
+#define SSD1306_SEQCOM_NOLR 0x02  // Sequential COM pin configuration
+                                  // Disable COM Left/Right remap
+#define SSD1306_ALTCOM_NOLR 0x12  // Alternative COM pin configuration
+                                  // Disable COM Left/Right remap
+#define SSD1306_SEQCOM_ENLR 0x22  // Sequential COM pin configuration
+                                  // Enable COM Left/Right remap
+#define SSD1306_ALTCOM_ENLR 0x32  // Alternative COM pin configuration
+                                  // Enable COM Left/Right remap
+
+
 
 class Adafruit_SSD1306Plus:public Adafruit_SSD1306 {    //Adafruit_SSD1306Plus class inherits base class Adafruit_SSD1306
 public:
