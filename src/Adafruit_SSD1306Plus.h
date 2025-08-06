@@ -9,8 +9,17 @@
 
 #include <Adafruit_SSD1306.h>
 
+
+//
+// Command/Data byte defines
+//
+
 #define SSD1306_COMMAND                      0x00
 #define SSD1306_DATA                         0xC0
+
+//
+// Command byte defines
+//
 
 #define SSD1306_SETLOWCOLUMN                 0x00 ///< Not currently used
 #define SSD1306_UNKNOWN_0x01                 0x01
@@ -286,6 +295,17 @@
                                   // Enable COM Left/Right remap
 
 
+//
+// Charge pump configuration - Sect. 7, Table 9-1 datasheet
+//
+
+#define SSD1306_CH_PUMPOFF. 0x10
+#define SSD1306_CH_PUMPON   0x14
+
+
+//
+// Class 
+//
 
 class Adafruit_SSD1306Plus:public Adafruit_SSD1306 {    //Adafruit_SSD1306Plus class inherits base class Adafruit_SSD1306
 public:
