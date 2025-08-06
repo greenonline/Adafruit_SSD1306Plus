@@ -134,7 +134,7 @@ void setup() {
       0x2F};
   display.ssd1306_sendCommandList(cmdlistStartScroll, sizeof(cmdlistStartScroll));
 
-  pause(2000);
+  delay(2000);
 
   // Stop scroll and start right one pixel scroll, 21 times.
   display.ssd1306_sendCommandList(cmdlistStopScroll, sizeof(cmdlistStopScroll));
@@ -149,11 +149,11 @@ void setup() {
   display.ssd1306_sendCommandList(cmdlistHScrollOne, sizeof(cmdlistHScrollOne));
 
   int wait_time = 12;
-  pause(wait_time);
+  delay(wait_time);
 
   for (int i=0; i<20; i++) {
     display.ssd1306_sendCommandList(cmdlistHScrollOne, sizeof(cmdlistHScrollOne));
-    pause(wait_time);
+    delay(wait_time);
   }
 }
 
