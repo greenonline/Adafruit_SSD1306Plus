@@ -302,6 +302,13 @@
 #define SSD1306_CH_PUMPOFF. 0x10
 #define SSD1306_CH_PUMPON   0x14
 
+//
+// Zoom configuration
+//
+
+#define SSD1306_ZOOM_ON     0x01
+#define SSD1306_ZOOM_OFF    0x00
+
 
 //
 // Class 
