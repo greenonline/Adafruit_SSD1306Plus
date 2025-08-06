@@ -251,8 +251,8 @@
 #define SSD1306_UNKNOWN_0xE0                 0xE0
 #define SSD1306_UNKNOWN_0xE1                 0xE1
 #define SSD1306_UNKNOWN_0xE2                 0xE2
-#define SSD1306_POSSIBLE_RESET               0xE3 // No Adafruit label available?
-#define SSD1306_NOP                          0xE4 // No Adafruit label available?
+#define SSD1306_NOP                          0xE3 // No Adafruit label available?
+#define SSD1306_POSSIBLE_RESET               0xE4 // See note below
 #define SSD1306_UNKNOWN_0xE5                 0xE5
 #define SSD1306_UNKNOWN_0xE6                 0xE6
 #define SSD1306_UNKNOWN_0xE7                 0xE7
@@ -280,6 +280,11 @@
 #define SSD1306_UNKNOWN_0xFD                 0xFD
 #define SSD1306_UNKNOWN_0xFE                 0xFE
 #define SSD1306_UNKNOWN_0xFF                 0xFF
+
+//
+// Note: For SSD1306_POSSIBLE_RESET = 0xE4
+// URL: https://forum.arduino.cc/t/ssd1306-reset-pin/291767/14
+//
 
 //
 // COM pin configuration - Sect. 4, Table 9-1 datasheet
