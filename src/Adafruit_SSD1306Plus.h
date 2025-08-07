@@ -304,15 +304,15 @@
 // Charge pump configuration - Sect. 7, Table 9-1 datasheet
 //
 
-#define SSD1306_CH_PUMPOFF. 0x10
-#define SSD1306_CH_PUMPON   0x14
+#define SSD1306_CH_PUMP_OFF  0x10
+#define SSD1306_CH_PUMP_ON   0x14
 
 //
 // Zoom configuration
 //
 
-#define SSD1306_ZOOM_ON     0x01
-#define SSD1306_ZOOM_OFF    0x00
+#define SSD1306_ZOOM_ON      0x01
+#define SSD1306_ZOOM_OFF     0x00
 
 
 //
@@ -359,6 +359,21 @@ public:
   void stopFade(void);
   void stopBlink(void);
   void setZoom(bool i);
+
+  // Extra bonus features!
+  // COM Pins configuration
+  void setCOMPins(bool com, bool lr);
+  void setCOMPins_SEQCOM_NOLR(void);
+  void setCOMPins_ALTCOM_NOLR(void);
+  void setCOMPins_SEQCOM_ENLR(void);
+  void setCOMPins_ALTCOM_ENLR(void);
+  // Charge Pump
+  void setChargePump(bool i);
+  void setChargePumpOn(void);
+  void setChargePumpOff(void);
+  void setChargePumpDisplay(bool i);
+  void setChargePumpOnDisplay(void);
+  void setChargePumpOffDisplay(void);
 
 };
 
