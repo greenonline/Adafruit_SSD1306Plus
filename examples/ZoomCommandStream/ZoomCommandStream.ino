@@ -1,6 +1,8 @@
 // ZoomCommandStream.ino
 // A zoom example, but using command bytes instead of the methods.
 // Test sketch to debug why zoom disable fails, directly after zoom enable.
+// The issue is due to the static keyword when defining the commandList array
+//    !!! Don't use static, for boolean toggle functions !!!
 
 #include <SPI.h>
 #include <Wire.h>
@@ -58,7 +60,8 @@ void setup() {
 
 void loop() {
   //testzoom();
-  DoZoomCommandStream();
+  //DoZoomCommandStream();
+  DoZoomCommandStreamRaw();
 }
 
 void testdrawchar(void) {
@@ -231,4 +234,22 @@ void DoZoomCommandStream(void) {
 
   delay(2000);
 
+}
+
+void DoZoomCommandStreamRaw(void) {
+  ZoomCommandsRaw(true);
+  delay(2000);
+
+  ZoomCommandsRaw(false);
+  delay(2000);
+}
+
+
+//
+// Contents of the zoom methods dumped here
+//
+void ZoomCommandsRaw(boolean i) {
+  /*static*/ const uint8_t PROGMEM zoomListRaw[] = {
+      SSD1306_SET_ZOOM, i};
+  display.ssd1306_sendCommandList(zoomListRaw, sizeof(zoomListRaw));
 }
