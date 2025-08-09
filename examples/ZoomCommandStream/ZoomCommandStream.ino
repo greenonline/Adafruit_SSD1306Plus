@@ -56,12 +56,22 @@ void setup() {
   // the library initializes this with an Adafruit splash screen.
   display.display();
   delay(2000); // Pause for 2 seconds
+
+
+  // Uncomment for plain text zoom
+  //testdrawchar();
+  //delay(2000); // Pause for 2 seconds
+
+  // Uncomment for stylised text zoom
+  //testdrawstyles();
+  //delay(2000); // Pause for 2 seconds
 }
 
 void loop() {
-  //testzoom();
+  // Comment and uncomment, as appropriate
+  testzoom();
   //DoZoomCommandStream();
-  DoZoomCommandStreamRaw();
+  //DoZoomCommandStreamRaw();
 }
 
 void testdrawchar(void) {
