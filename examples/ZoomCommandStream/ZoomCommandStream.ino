@@ -57,14 +57,14 @@ void setup() {
   display.display();
   delay(2000); // Pause for 2 seconds
 
-
+  // Comment out below if you just want to zoom the Adafruit splash screen.
   // Uncomment for plain text zoom
   //testdrawchar();
   //delay(2000); // Pause for 2 seconds
 
   // Uncomment for stylised text zoom
-  //testdrawstyles();
-  //delay(2000); // Pause for 2 seconds
+  testdrawstyles();
+  delay(2000); // Pause for 2 seconds
 }
 
 void loop() {
