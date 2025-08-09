@@ -65,13 +65,18 @@ void setup() {
   // Uncomment for stylised text zoom
   testdrawstyles();
   delay(2000); // Pause for 2 seconds
+
+  // Uncomment for random demo effects, other than zoom
+  //docommandstream();
+  //delay(2000); // Pause for 2 seconds
 }
 
 void loop() {
+
   // Comment and uncomment, as appropriate
   testzoom();
-  //DoZoomCommandStream();
-  //DoZoomCommandStreamRaw();
+  //dozoomcommandstream();
+  //dozoomcommandstreamraw();
 }
 
 void testdrawchar(void) {
@@ -122,7 +127,8 @@ void testzoom(void) {
   delay(2000);
 }
 
-void commandStream(void) {
+void docommandstream(void) {
+
   // Invert the display
   delay(2000);
   //display.invertDisplay(true);  // Inverted display
@@ -203,7 +209,8 @@ void commandStream(void) {
   }
 }
 
-void DoZoomCommandStream(void) {
+void dozoomcommandstream(void) {
+
   //
   // Zoom commands
   //
@@ -243,22 +250,22 @@ void DoZoomCommandStream(void) {
   display.ssd1306_sendCommandList(cmdlistZoomSet2, sizeof(cmdlistZoomSet2));
 
   delay(2000);
-
 }
 
-void DoZoomCommandStreamRaw(void) {
-  ZoomCommandsRaw(true);
+void dozoomcommandstreamraw(void) {
+
+  zoomcommandsraw(true);
   delay(2000);
 
-  ZoomCommandsRaw(false);
+  zoomcommandsraw(false);
   delay(2000);
 }
 
 
 //
-// Contents of the zoom methods dumped here
+// Contents of the zoom methods dumped here for test/comparison
 //
-void ZoomCommandsRaw(boolean i) {
+void zoomcommandsraw(boolean i) {
   /*static*/ const uint8_t PROGMEM zoomListRaw[] = {
       SSD1306_SET_ZOOM, i};
   display.ssd1306_sendCommandList(zoomListRaw, sizeof(zoomListRaw));
