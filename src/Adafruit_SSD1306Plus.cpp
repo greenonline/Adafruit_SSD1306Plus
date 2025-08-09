@@ -288,17 +288,17 @@ Adafruit_SSD1306Plus::~Adafruit_SSD1306Plus(void) {
 // To scroll the whole display, run: display.startscrollrightone(0x00, 0x0F)
 void Adafruit_SSD1306Plus::startscrollrightone(uint8_t start, uint8_t stop) {
   TRANSACTION_START
-  static const uint8_t PROGMEM scrollList1a[] = {
+  static const uint8_t PROGMEM scrollOneList1a[] = {
       SSD1306_RIGHT_HORIZONTAL_SCROLL_ONE, 0X00};
-  ssd1306_commandList(scrollList1a, sizeof(scrollList1a));
+  ssd1306_commandList(scrollOneList1a, sizeof(scrollOneList1a));
   ssd1306_command1(start);
   ssd1306_command1(0X00);
   ssd1306_command1(stop);
-  static const uint8_t PROGMEM scrollList1b[] = {0X00, 0XFF};//,
+  static const uint8_t PROGMEM scrollOneList1b[] = {0X00, 0XFF};//,
                                                  //SSD1306_ACTIVATE_SCROLL};
                                                  // No need to explicitly startScroll()
                                                  // ... for 1-pixel scroll
-  ssd1306_commandList(scrollList1b, sizeof(scrollList1b));
+  ssd1306_commandList(scrollOneList1b, sizeof(scrollOneList1b));
   TRANSACTION_END
 }
 
@@ -313,17 +313,17 @@ void Adafruit_SSD1306Plus::startscrollrightone(uint8_t start, uint8_t stop) {
 // To scroll the whole display, run: display.startscrollleftone(0x00, 0x0F)
 void Adafruit_SSD1306Plus::startscrollleftone(uint8_t start, uint8_t stop) {
   TRANSACTION_START
-  static const uint8_t PROGMEM scrollList2a[] = {SSD1306_LEFT_HORIZONTAL_SCROLL_ONE,
+  static const uint8_t PROGMEM scrollOneList2a[] = {SSD1306_LEFT_HORIZONTAL_SCROLL_ONE,
                                                  0X00};
-  ssd1306_commandList(scrollList2a, sizeof(scrollList2a));
+  ssd1306_commandList(scrollOneList2a, sizeof(scrollOneList2a));
   ssd1306_command1(start);
   ssd1306_command1(0X00);
   ssd1306_command1(stop);
-  static const uint8_t PROGMEM scrollList2b[] = {0X00, 0XFF};//,
+  static const uint8_t PROGMEM scrollOneList2b[] = {0X00, 0XFF};//,
                                                  //SSD1306_ACTIVATE_SCROLL};
                                                  // No need to explicitly startScroll()
                                                  // ... for 1-pixel scroll
-  ssd1306_commandList(scrollList2b, sizeof(scrollList2b));
+  ssd1306_commandList(scrollOneList2b, sizeof(scrollOneList2b));
   TRANSACTION_END
 }
 
@@ -338,18 +338,18 @@ void Adafruit_SSD1306Plus::startscrollleftone(uint8_t start, uint8_t stop) {
 // To scroll the whole display, run: display.startscrolldiagrightone(0x00, 0x0F)
 void Adafruit_SSD1306Plus::startscrolldiagrightone(uint8_t start, uint8_t stop) {
   TRANSACTION_START
-  static const uint8_t PROGMEM scrollList3a[] = {
+  static const uint8_t PROGMEM scrollOneList3a[] = {
       SSD1306_SET_VERTICAL_SCROLL_AREA, 0X00};
-  ssd1306_commandList(scrollList3a, sizeof(scrollList3a));
+  ssd1306_commandList(scrollOneList3a, sizeof(scrollOneList3a));
   ssd1306_command1(HEIGHT);
-  static const uint8_t PROGMEM scrollList3b[] = {
+  static const uint8_t PROGMEM scrollOneList3b[] = {
       SSD1306_VERTICAL_AND_RIGHT_HORIZONTAL_SCROLL_ONE, 0X00};
-  ssd1306_commandList(scrollList3b, sizeof(scrollList3b));
+  ssd1306_commandList(scrollOneList3b, sizeof(scrollOneList3b));
   ssd1306_command1(start);
   ssd1306_command1(0X00);
   ssd1306_command1(stop);
-  //static const uint8_t PROGMEM scrollList3c[] = {0X01, SSD1306_ACTIVATE_SCROLL};
-  //ssd1306_commandList(scrollList3c, sizeof(scrollList3c));
+  //static const uint8_t PROGMEM scrollOneList3c[] = {0X01, SSD1306_ACTIVATE_SCROLL};
+  //ssd1306_commandList(scrollOneList3c, sizeof(scrollOneList3c));
   TRANSACTION_END
 }
 
@@ -364,18 +364,18 @@ void Adafruit_SSD1306Plus::startscrolldiagrightone(uint8_t start, uint8_t stop) 
 // To scroll the whole display, run: display.startscrolldiagleftone(0x00, 0x0F)
 void Adafruit_SSD1306Plus::startscrolldiagleftone(uint8_t start, uint8_t stop) {
   TRANSACTION_START
-  static const uint8_t PROGMEM scrollList4a[] = {
+  static const uint8_t PROGMEM scrollOneList4a[] = {
       SSD1306_SET_VERTICAL_SCROLL_AREA, 0X00};
-  ssd1306_commandList(scrollList4a, sizeof(scrollList4a));
+  ssd1306_commandList(scrollOneList4a, sizeof(scrollOneList4a));
   ssd1306_command1(HEIGHT);
-  static const uint8_t PROGMEM scrollList4b[] = {
+  static const uint8_t PROGMEM scrollOneList4b[] = {
       SSD1306_VERTICAL_AND_LEFT_HORIZONTAL_SCROLL_ONE, 0X00};
-  ssd1306_commandList(scrollList4b, sizeof(scrollList4b));
+  ssd1306_commandList(scrollOneList4b, sizeof(scrollOneList4b));
   ssd1306_command1(start);
   ssd1306_command1(0X00);
   ssd1306_command1(stop);
-  //static const uint8_t PROGMEM scrollList4c[] = {0X01, SSD1306_ACTIVATE_SCROLL};
-  //ssd1306_commandList(scrollList4c, sizeof(scrollList4c));
+  //static const uint8_t PROGMEM scrollOneList4c[] = {0X01, SSD1306_ACTIVATE_SCROLL};
+  //ssd1306_commandList(scrollOneList4c, sizeof(scrollOneList4c));
   TRANSACTION_END
 }
 
