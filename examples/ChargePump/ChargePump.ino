@@ -54,12 +54,16 @@ void setup() {
   display.display();
   delay(2000); // Pause for 2 seconds
 
+  // Uncomment only if you know what you are doing!
+  // Please refer to the data sheet for more information
   //doChargePumpStuff();
 
 }
 
 void loop() {
-  doChargePumpStuff();
+  // Uncomment only if you know what you are doing!
+  // Please refer to the data sheet for more information
+  //doChargePumpStuff();
 }
 
 
