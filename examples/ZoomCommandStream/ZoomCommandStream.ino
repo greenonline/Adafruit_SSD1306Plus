@@ -2,7 +2,7 @@
 // A zoom example, but using command bytes instead of the methods.
 // Test sketch to debug why zoom disable fails, directly after zoom enable.
 // The issue is due to the static keyword when defining the commandList array
-//    !!! Don't use static, for boolean toggle functions !!!
+//    !!! Don't use static, for arrays containing variables, obviously !!!
 
 #include <SPI.h>
 #include <Wire.h>
