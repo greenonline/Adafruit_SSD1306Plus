@@ -414,16 +414,18 @@ void Adafruit_SSD1306Plus::ssd1306_sendCommandList(const uint8_t *c, uint8_t n) 
 void Adafruit_SSD1306Plus::fade(uint8_t time){
   TRANSACTION_START
   static const uint8_t PROGMEM fadeblinkList1a[] = {
-      SSD1306_SET_FADE_BLINK, SSD1306_SFB_FADE + time};
+      SSD1306_SET_FADE_BLINK};
   ssd1306_commandList(fadeblinkList1a, sizeof(fadeblinkList1a));
+  ssd1306_command1(SSD1306_SFB_FADE + time);
   TRANSACTION_END
 }
 
 void Adafruit_SSD1306Plus::blink(uint8_t time){
   TRANSACTION_START
   static const uint8_t PROGMEM fadeblinkList1b[] = {
-      SSD1306_SET_FADE_BLINK, SSD1306_SFB_BLINK + time};
+      SSD1306_SET_FADE_BLINK};
   ssd1306_commandList(fadeblinkList1b, sizeof(fadeblinkList1b));
+  ssd1306_command1(SSD1306_SFB_BLINK + time);
   TRANSACTION_END
 }
 
@@ -446,19 +448,20 @@ void Adafruit_SSD1306Plus::stopBlink(void){
 void Adafruit_SSD1306Plus::setZoom(bool i){
   TRANSACTION_START
   static const uint8_t PROGMEM zoomList1a[] = {
-      SSD1306_SET_ZOOM, i};
+      SSD1306_SET_ZOOM};
   ssd1306_commandList(zoomList1a, sizeof(zoomList1a));
+  ssd1306_command1(i);
   TRANSACTION_END
 }
-
 
 // Extra bonus features!
 // COM Pins configuration
 void Adafruit_SSD1306Plus::setCOMPins(bool com, bool lr){
   TRANSACTION_START
   static const uint8_t PROGMEM comLRList1[] = {
-      SSD1306_SETCOMPINS, 0x02 + com*16 + lr*32};
+      SSD1306_SETCOMPINS};
   ssd1306_commandList(comLRList1, sizeof(comLRList1));
+  ssd1306_command1(0x02 + com*16 + lr*32);
   TRANSACTION_END
 }
 
@@ -499,9 +502,9 @@ void Adafruit_SSD1306Plus::setChargePump(bool i){
   TRANSACTION_START
   // Charge Pump setting - set
   static const uint8_t PROGMEM cmdlistChrgPmpSet[] = {
-      SSD1306_CHARGEPUMP,                          // command - Charge Pump setting
-      i ? SSD1306_CH_PUMP_ON : SSD1306_CH_PUMP_OFF};  // OFF/ON. 0x10/0x14
+      SSD1306_CHARGEPUMP};                         // command - Charge Pump setting
   ssd1306_commandList(cmdlistChrgPmpSet, sizeof(cmdlistChrgPmpSet));
+  ssd1306_command1(i ? SSD1306_CH_PUMP_ON : SSD1306_CH_PUMP_OFF);  // OFF/ON. 0x10/0x14
   TRANSACTION_END
 }
 
@@ -529,10 +532,10 @@ void Adafruit_SSD1306Plus::setChargePumpDisplay(bool i){
   TRANSACTION_START
   // Charge Pump setting - set and display
   static const uint8_t PROGMEM cmdlistChrgPmpSetDisplay[] = {
-      SSD1306_CHARGEPUMP,                          // command - Charge Pump setting
-      i ? SSD1306_CH_PUMP_ON : SSD1306_CH_PUMP_OFF,   // OFF/ON. 0x10/0x14
-      SSD1306_DISPLAYON};                          // Display ON
+      SSD1306_CHARGEPUMP};                         // command - Charge Pump setting
   ssd1306_commandList(cmdlistChrgPmpSetDisplay, sizeof(cmdlistChrgPmpSetDisplay));
+  ssd1306_command1(i ? SSD1306_CH_PUMP_ON : SSD1306_CH_PUMP_OFF);  // OFF/ON. 0x10/0x14
+  ssd1306_command1(SSD1306_DISPLAYON);                             // Display ON
   TRANSACTION_END
 }
 
