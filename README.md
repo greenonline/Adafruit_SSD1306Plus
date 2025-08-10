@@ -191,7 +191,7 @@ A similarly derived library for the `SSD1306_I2C` Arduino library, [`SSD1306_I2C
 
 ## Known Issues
 
- - Can not turn off Zoom, immediately after turning it on - weird bug, under investigation.
+ - None.
 
 ---
 
