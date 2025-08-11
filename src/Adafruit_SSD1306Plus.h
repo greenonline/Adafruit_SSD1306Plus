@@ -2,7 +2,6 @@
 #define _Adafruit_SSD1306Plus_H_
 
 
-
 #include <Adafruit_GFX.h>
 #include <SPI.h>
 #include <Wire.h>
@@ -287,17 +286,25 @@
 //
 
 //
+// Fade/Blink data bytes
+//
+
+#define SSD1306_SFB_OFF      0x00
+#define SSD1306_SFB_FADE     0x20
+#define SSD1306_SFB_BLINK    0x30
+
+//
 // COM pin configuration - Sect. 4, Table 9-1 datasheet
 //
 
-#define SSD1306_SEQCOM_NOLR 0x02  // Sequential COM pin configuration
-                                  // Disable COM Left/Right remap
-#define SSD1306_ALTCOM_NOLR 0x12  // Alternative COM pin configuration
-                                  // Disable COM Left/Right remap
-#define SSD1306_SEQCOM_ENLR 0x22  // Sequential COM pin configuration
-                                  // Enable COM Left/Right remap
-#define SSD1306_ALTCOM_ENLR 0x32  // Alternative COM pin configuration
-                                  // Enable COM Left/Right remap
+#define SSD1306_SEQCOM_NOLR  0x02  // Sequential COM pin configuration
+                                   // Disable COM Left/Right remap
+#define SSD1306_ALTCOM_NOLR  0x12  // Alternative COM pin configuration
+                                   // Disable COM Left/Right remap
+#define SSD1306_SEQCOM_ENLR  0x22  // Sequential COM pin configuration
+                                   // Enable COM Left/Right remap
+#define SSD1306_ALTCOM_ENLR  0x32  // Alternative COM pin configuration
+                                   // Enable COM Left/Right remap
 
 
 //
@@ -374,7 +381,6 @@ public:
   void setChargePumpDisplay(bool i);
   void setChargePumpOnDisplay(void);
   void setChargePumpOffDisplay(void);
-
 };
 
 #endif // _Adafruit_SSD1306Plus_H_
