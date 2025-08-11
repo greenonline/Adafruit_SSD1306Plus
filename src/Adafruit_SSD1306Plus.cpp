@@ -21,13 +21,6 @@
 #include "splash.h"
 
 
-
-
-
-
-
-
-
 #ifdef HAVE_PORTREG
 #define SSD1306_SELECT *csPort &= ~csPinMask;       ///< Device select
 #define SSD1306_DESELECT *csPort |= csPinMask;      ///< Device deselect
@@ -408,9 +401,6 @@ void Adafruit_SSD1306Plus::ssd1306_sendCommandList(const uint8_t *c, uint8_t n) 
 
 // New commands to v1.5
 
-#define SSD1306_SFB_FADE  0x20
-#define SSD1306_SFB_BLINK 0x30
-
 void Adafruit_SSD1306Plus::fade(uint8_t time){
   TRANSACTION_START
   static const uint8_t PROGMEM fadeblinkList1a[] = {
@@ -432,7 +422,7 @@ void Adafruit_SSD1306Plus::blink(uint8_t time){
 void Adafruit_SSD1306Plus::stopFadeBlink(void){
   TRANSACTION_START
   static const uint8_t PROGMEM fadeblinkList1c[] = {
-      SSD1306_SET_FADE_BLINK, 0X00};
+      SSD1306_SET_FADE_BLINK, SSD1306_SFB_OFF};
   ssd1306_commandList(fadeblinkList1c, sizeof(fadeblinkList1c));
   TRANSACTION_END
 }
