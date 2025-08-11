@@ -435,12 +435,28 @@ void Adafruit_SSD1306Plus::stopBlink(void){
   stopFadeBlink();
 }
 
-void Adafruit_SSD1306Plus::setZoom(bool i){
+void Adafruit_SSD1306Plus::zoom(void){
   TRANSACTION_START
   static const uint8_t PROGMEM zoomList1a[] = {
-      SSD1306_SET_ZOOM};
+      SSD1306_SET_ZOOM, 0x01};
   ssd1306_commandList(zoomList1a, sizeof(zoomList1a));
+  TRANSACTION_END
+}
+
+void Adafruit_SSD1306Plus::setZoom(bool i){
+  TRANSACTION_START
+  static const uint8_t PROGMEM zoomList1b[] = {
+      SSD1306_SET_ZOOM};
+  ssd1306_commandList(zoomList1b, sizeof(zoomList1b));
   ssd1306_command1(i);
+  TRANSACTION_END
+}
+
+void Adafruit_SSD1306Plus::stopZoom(void){
+  TRANSACTION_START
+  static const uint8_t PROGMEM zoomList1c[] = {
+      SSD1306_SET_ZOOM, 0x00};
+  ssd1306_commandList(zoomList1c, sizeof(zoomList1c));
   TRANSACTION_END
 }
 
