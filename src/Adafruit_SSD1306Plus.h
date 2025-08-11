@@ -365,7 +365,9 @@ public:
   void stopFadeBlink(void);
   void stopFade(void);
   void stopBlink(void);
+  void zoom(void);
   void setZoom(bool i);
+  void stopZoom();
 
   // Extra bonus features!
   // COM Pins configuration
