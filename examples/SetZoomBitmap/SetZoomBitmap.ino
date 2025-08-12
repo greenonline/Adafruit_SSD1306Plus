@@ -49,7 +49,6 @@ void loop() {
 
 void DoZoomDemo(void){
   testzoom();
-  delay(10000);
 }
 
 void testzoom(void) {
