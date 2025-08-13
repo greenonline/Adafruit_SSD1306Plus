@@ -6,12 +6,6 @@
 
 Note that, unlike the continuous scroll methods of the parent library `Adafruit_SSD1306`, the 1-pixel scroll methods do not send the `SSD1306_ACTIVATE_SCROLL` byte, as the last byte, as it is not required, for the 1-pixel scroll methods *only*.
 
-#### <A NAME="markdown-header-1-pixel-scrolling-and-stopscroll"></a>1-pixel scrolling and `stopscroll()` 
-
-Note that the 1-pixel scroll methods do not require *repeated* calls to `stopscroll()` either before or after *each* 1-pixel scroll method call, as it is not required, nor efficient, to do so, for the 1-pixel scroll methods *only*. 
-
-However, it *is* good practice to call `stopScroll()` *once* before commencing a series of 1-pixel scroll method calls – or any scroll commmands for that matter – just to be certain that any continuous scrolling, that *might* be occurring, is halted – otherwise the display's RAM buffer may become corrupted.
-
 #### <A NAME="markdown-header-use-of-interval-byte-for-1-pixel-scroll"></a>Use of 'interval' byte for 1-pixel scroll
 
 The 'interval' byte, `C[2:0]`, as detailed in the datasheet on page 31, Table 9-1 section 2, obviously has no meaning for a 1-pixel scroll.
