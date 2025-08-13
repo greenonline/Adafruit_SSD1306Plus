@@ -94,7 +94,8 @@ void SSD1306Plus::setupScrollHOneWait(bool dir, uint8_t start, uint8_t end, int 
 void SSD1306Plus::setupScrollHVOneWait(bool dirX, bool dirY, uint8_t start, uint8_t end, uint8_t interval, int scrollWaitTime);
 ```
 
-### Do this BEFORE commencing display
+
+### <A NAME="markdown-header-do-this-before-commencing-display"></a>Do this BEFORE commencing display
 
 Be sure to stop scroll, fade, blink, and especially zoom, at the beginning of a sketch, as the SSD1306 may has a previous configuration in RAM that needs to be cleared:
 
