@@ -63,11 +63,9 @@ void loop() {
 void DoZoomDemo(void){
   testdrawchar();      // Draw characters of the default font
   testzoom();
-  delay(10000);
 
   testdrawstyles();    // Draw 'stylized' characters
   testzoom();
-  delay(10000);
 }
 
 void testdrawchar(void) {
