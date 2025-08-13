@@ -91,7 +91,6 @@ Each of the three regions are scrolled at varying rates, with the mid-ground scr
  - [Why Bother?](xtras/WhyBother.md)
  - [Differences](xtras/DevNotes.md)
    - [1-pixel scrolling and `SSD1306_ACTIVATE_SCROLL` for Adafruit_SSD1306](xtras/DevNotes.md#markdown-header-1-pixel-scrolling-and-SSD1306_ACTIVATE_SCROLL)
-   - [1-pixel scrolling and `stopScroll()` for SSD1306_I2C](xtras/DevNotes.md#markdown-header-1-pixel-scrolling-and-stopscroll)
    - [Use of 'interval' byte for 1-pixel scroll](xtras/DevNotes.md#markdown-header-use-of-interval-byte-for-1-pixel-scroll)
    - [Waiting for the 1-pixel scroll](xtras/DevNotes.md#markdown-header-waiting-for-the-1-pixel-scroll)
    - [Pairing of 1-pixel scroll and delay](xtras/DevNotes.md#markdown-header-pairing-of-1-pixel-scroll-and-delay)
