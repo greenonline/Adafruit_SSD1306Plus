@@ -49,6 +49,40 @@ There are two commands, that are missing from the commonly distributed v1.1 data
   void stopZoom();
 ```
 
+### Bonus commands
+
+Two sets of methods are provided, which deal with configuration of the COM pins and the charge pump, respectively. Please refer to the datasheet for more details.
+
+#### COM pins configuration
+
+Only use these methods if you know what you are doing.
+
+##### Methods
+
+```none
+  void setCOMPins(bool com, bool lr);
+  void setCOMPins_SEQCOM_NOLR(void);
+  void setCOMPins_ALTCOM_NOLR(void);
+  void setCOMPins_SEQCOM_ENLR(void);
+  void setCOMPins_ALTCOM_ENLR(void);
+```
+
+#### Charge pump configuration
+
+Only use these methods if you know what you are doing.
+
+##### Methods
+
+
+```none
+  void setChargePump(bool i);
+  void setChargePumpOn(void);
+  void setChargePumpOff(void);
+  void setChargePumpDisplay(bool i);
+  void setChargePumpOnDisplay(void);
+  void setChargePumpOffDisplay(void);
+```
+
 ## Is there a 'hidden', or undocumented, single pixel vertical/horizontal scroll?
 
 Seeing as there are two undocumented *horizontal* scroll commands, so, likewise, it makes one wonder whether there are undocumented equivalents for the two *continual vertical/horizontal* (a.k.a. 'diagonal') scroll commands - that would offer *1-pixel* vertical/horizontal (a.k.a. 'diagonal') scroll functionality..?
