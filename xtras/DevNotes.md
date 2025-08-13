@@ -2,23 +2,23 @@
 
 ### 1-pixel scroll
 
-#### 1-pixel scrolling and `SSD1306_ACTIVATE_SCROLL`
+#### <A NAME="markdown-header-1-pixel-scrolling-and-SSD1306_ACTIVATE_SCROLL"></a>1-pixel scrolling and `SSD1306_ACTIVATE_SCROLL`
 
 Note that, unlike the continuous scroll methods of the parent library `Adafruit_SSD1306`, the 1-pixel scroll methods do not send the `SSD1306_ACTIVATE_SCROLL` byte, as the last byte, as it is not required, for the 1-pixel scroll methods *only*.
 
-#### 1-pixel scrolling and `stopscroll()` 
+#### <A NAME="markdown-header-1-pixel-scrolling-and-stopscroll"></a>1-pixel scrolling and `stopscroll()` 
 
 Note that the 1-pixel scroll methods do not require *repeated* calls to `stopscroll()` either before or after *each* 1-pixel scroll method call, as it is not required, nor efficient, to do so, for the 1-pixel scroll methods *only*. 
 
 However, it *is* good practice to call `stopScroll()` *once* before commencing a series of 1-pixel scroll method calls – or any scroll commmands for that matter – just to be certain that any continuous scrolling, that *might* be occurring, is halted – otherwise the display's RAM buffer may become corrupted.
 
-#### Use of 'interval' byte for 1-pixel scroll
+#### <A NAME="markdown-header-use-of-interval-byte-for-1-pixel-scroll"></a>Use of 'interval' byte for 1-pixel scroll
 
 The 'interval' byte, `C[2:0]`, as detailed in the datasheet on page 31, Table 9-1 section 2, obviously has no meaning for a 1-pixel scroll.
 
 Setting the 'interval' byte to `0b111` prevents wrap-around scrolling and instead causes a white "background" to appear, from the edge of the screen, when scrolling. Setting to `0b000` eliminates this white background effect, and enables wrap-around scrolling. 
 
-#### Waiting for the 1-pixel scroll
+#### <A NAME="markdown-header-waiting-for-the-1-pixel-scroll"></a>Waiting for the 1-pixel scroll
 
 ##### Seeeduino Xiao
 
@@ -52,7 +52,7 @@ I also found for the Arduino Uno simulation in Wokwi, that the `wait_time` had t
 |63 | jerky 2 pixel jumpy scroll |
 |50 | no scrolling |
 
-##### Pairing of 1-pixel scroll and delay
+### <A NAME="markdown-header-pairing-of-1-pixel-scroll-and-delay"></a>Pairing of 1-pixel scroll and delay
 
 Seeing as a *brief* delay is *always* required, after a 1-pixel scroll, it seemed expedient to combine the two together in wrapper methods that just combine the two into one simple call:
 
@@ -63,7 +63,7 @@ void Adafruit_SSD1306Plus::startscrolldiagrightonewait(uint8_t start, uint8_t st
 void Adafruit_SSD1306Plus::startscrolldiagleftonewait(uint8_t start, uint8_t stop, int scrollWaitTime)
 ```
 
-### Vertical 1-pixel scroll
+### <A NAME="markdown-header-vertical-1-pixel-scroll"></a>Vertical 1-pixel scroll
 
 Feel free to experiment! You can try to find the *mythical* 1-pixel vertical scroll yourself by changing the values of the two `#define` lines
 
@@ -75,25 +75,6 @@ Feel free to experiment! You can try to find the *mythical* 1-pixel vertical scr
 in `Adafruit_SSD1306Plus/src/Adafruit_SSD1306Plus.h`.
 
 As stated in [OnePixelVertScroll](xtras/OnePixelVertScroll.md), the two `#define` lines are currently set to `0x24` and `0x25` which do not *seem* to work, as expected, i.e. not at all!
-
-### Pairing of 1-pixel scroll and delay
-
-Seeing as a *brief* delay is *always* required, after a 1-pixel scroll, it seemed expedient to combine the two together in wrapper methods that just combine the two into one simple call:
-
-```none
-void Adafruit_SSD1306Plus::startscrollrightonewait(uint8_t start, uint8_t stop, int scrollWaitTime);
-void Adafruit_SSD1306Plus::startscrollleftonewait(uint8_t start, uint8_t stop, int scrollWaitTime);
-void Adafruit_SSD1306Plus::startscrolldiagrightonewait(uint8_t start, uint8_t stop, int scrollWaitTime);
-void Adafruit_SSD1306Plus::startscrolldiagleftonewait(uint8_t start, uint8_t stop, int scrollWaitTime)
-```
-
-or for `SSD1306_I2CPlus`
-
-```none
-void SSD1306Plus::setupScrollHOneWait(bool dir, uint8_t start, uint8_t end, int interval); 
-void SSD1306Plus::setupScrollHVOneWait(bool dirX, bool dirY, uint8_t start, uint8_t end, uint8_t interval, int scrollWaitTime);
-```
-
 
 ### <A NAME="markdown-header-do-this-before-commencing-display"></a>Do this BEFORE commencing display
 
@@ -108,7 +89,7 @@ Be sure to stop scroll, fade, blink, and especially zoom, at the beginning of a 
 
 Zoom can be left configured from a previous sketch, leading to confusing results. This occurs if the display is in zoom mode, whilst the new sketch is being uploaded.
 
-### Inconsistent method names (`Adafruit_SSD1306` only)
+### <A NAME="markdown-header-inconsistent-method-names-Adafruit_1306-only"></a>Inconsistent method names (`Adafruit_SSD1306` only)
 
 Three diferent naming schemes appear to have been used in the parent Adafruit_SSD1306 library:
 
