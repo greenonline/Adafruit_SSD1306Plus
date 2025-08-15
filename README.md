@@ -126,13 +126,13 @@ Each of the three regions are scrolled at varying rates, with the mid-ground scr
 
  - [Why Bother?](xtras/WhyBother.md)
  - [Differences](xtras/DevNotes.md)
-   - [1-pixel scrolling and `SSD1306_ACTIVATE_SCROLL` for Adafruit_SSD1306](xtras/DevNotes.md#markdown-header-1-pixel-scrolling-and-SSD1306_ACTIVATE_SCROLL)
-   - [Use of 'interval' byte for 1-pixel scroll](xtras/DevNotes.md#markdown-header-use-of-interval-byte-for-1-pixel-scroll)
-   - [Waiting for the 1-pixel scroll](xtras/DevNotes.md#markdown-header-waiting-for-the-1-pixel-scroll)
-   - [Pairing of 1-pixel scroll and delay](xtras/DevNotes.md#markdown-header-pairing-of-1-pixel-scroll-and-delay)
-   - [Vertical 1-pixel scroll](xtras/DevNotes.md#markdown-header-vertical-1-pixel-scroll)
-   - [Do this BEFORE commencing display](xtras/DevNotes.md#markdown-header-do-this-before-commencing-display)
-   - [Inconsistent method names (`Adafruit_1306` only)](xtras/DevNotes.md#markdown-header-inconsistent-method-names-Adafruit_1306-only)
+   - [1-pixel scrolling and `SSD1306_ACTIVATE_SCROLL` for Adafruit_SSD1306](xtras/DevNotes.md#user-content-1-pixel-scrolling-and-SSD1306_ACTIVATE_SCROLL)
+   - [Use of 'interval' byte for 1-pixel scroll](xtras/DevNotes.md#user-content-use-of-interval-byte-for-1-pixel-scroll)
+   - [Waiting for the 1-pixel scroll](xtras/DevNotes.md#user-content-waiting-for-the-1-pixel-scroll)
+   - [Pairing of 1-pixel scroll and delay](xtras/DevNotes.md#user-content-pairing-of-1-pixel-scroll-and-delay)
+   - [Vertical 1-pixel scroll](xtras/DevNotes.md#user-content-vertical-1-pixel-scroll)
+   - [Do this BEFORE commencing display](xtras/DevNotes.md#user-content-do-this-before-commencing-display)
+   - [Inconsistent method names (`Adafruit_1306` only)](xtras/DevNotes.md#user-content-inconsistent-method-names-Adafruit_1306-only)
 
 ## See also
 
