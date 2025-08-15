@@ -2,17 +2,17 @@
 
 ### 1-pixel scroll
 
-#### <A NAME="markdown-header-1-pixel-scrolling-and-SSD1306_ACTIVATE_SCROLL"></a>1-pixel scrolling and `SSD1306_ACTIVATE_SCROLL`
+#### 1-pixel scrolling and `SSD1306_ACTIVATE_SCROLL`
 
 Note that, unlike the continuous scroll methods of the parent library `Adafruit_SSD1306`, the 1-pixel scroll methods do not send the `SSD1306_ACTIVATE_SCROLL` byte, as the last byte, as it is not required, for the 1-pixel scroll methods *only*.
 
-#### <A NAME="markdown-header-use-of-interval-byte-for-1-pixel-scroll"></a>Use of 'interval' byte for 1-pixel scroll
+#### Use of 'interval' byte for 1-pixel scroll
 
 The 'interval' byte, `C[2:0]`, as detailed in the datasheet on page 31, Table 9-1 section 2, obviously has no meaning for a 1-pixel scroll.
 
 Setting the 'interval' byte to `0b111` prevents wrap-around scrolling and instead causes a white "background" to appear, from the edge of the screen, when scrolling. Setting to `0b000` eliminates this white background effect, and enables wrap-around scrolling. 
 
-#### <A NAME="markdown-header-waiting-for-the-1-pixel-scroll"></a>Waiting for the 1-pixel scroll
+#### Waiting for the 1-pixel scroll
 
 ##### Seeeduino Xiao
 
@@ -46,7 +46,7 @@ I also found for the Arduino Uno simulation in Wokwi, that the `wait_time` had t
 |63 | jerky 2 pixel jumpy scroll |
 |50 | no scrolling |
 
-### <A NAME="markdown-header-pairing-of-1-pixel-scroll-and-delay"></a>Pairing of 1-pixel scroll and delay
+### Pairing of 1-pixel scroll and delay
 
 Seeing as a *brief* delay is *always* required, after a 1-pixel scroll, it seemed expedient to combine the two together in wrapper methods that just combine the two into one simple call:
 
@@ -57,7 +57,7 @@ void Adafruit_SSD1306Plus::startscrolldiagrightonewait(uint8_t start, uint8_t st
 void Adafruit_SSD1306Plus::startscrolldiagleftonewait(uint8_t start, uint8_t stop, int scrollWaitTime)
 ```
 
-### <A NAME="markdown-header-vertical-1-pixel-scroll"></a>Vertical 1-pixel scroll
+### Vertical 1-pixel scroll
 
 Feel free to experiment! You can try to find the *mythical* 1-pixel vertical scroll yourself by changing the values of the two `#define` lines
 
@@ -70,7 +70,7 @@ in `Adafruit_SSD1306Plus/src/Adafruit_SSD1306Plus.h`.
 
 As stated in [OnePixelVertScroll](xtras/OnePixelVertScroll.md), the two `#define` lines are currently set to `0x24` and `0x25` which do not *seem* to work, as expected, i.e. not at all!
 
-### <A NAME="markdown-header-do-this-before-commencing-display"></a>Do this BEFORE commencing display
+### Do this BEFORE commencing display
 
 Be sure to stop scroll, fade, blink, and especially zoom, at the beginning of a sketch, as the SSD1306 may has a previous configuration in RAM that needs to be cleared:
 
@@ -83,7 +83,7 @@ Be sure to stop scroll, fade, blink, and especially zoom, at the beginning of a 
 
 Zoom can be left configured from a previous sketch, leading to confusing results. This occurs if the display is in zoom mode, whilst the new sketch is being uploaded.
 
-### <A NAME="markdown-header-inconsistent-method-names-Adafruit_1306-only"></a>Inconsistent method names (`Adafruit_SSD1306` only)
+### Inconsistent method names (`Adafruit_SSD1306` only)
 
 Three diferent naming schemes appear to have been used in the parent Adafruit_SSD1306 library:
 
